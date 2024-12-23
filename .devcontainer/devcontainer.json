@@ -1,0 +1,48 @@
+{
+    "name": "Multi-Lang DevContainer", 
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "workspaceFolder": "/workspace", 
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "dbaeumer.vscode-eslint",
+                "redhat.vscode-yaml",
+                "ms-python.python",
+                "ms-vscode.vscode-typescript-next",
+                "rust-lang.rust-analyzer",
+                "ms-dotnettools.csharp"
+            ],
+            "settings": {
+                "editor.formatOnSave": true,
+                "editor.tabSize": 2,
+                "files.eol": "\n"
+            },
+            "launch": {
+                "configurations": [
+                    {
+                        "name": "Python: Current File",
+                        "type": "python",
+                        "request": "launch",
+                        "program": "${file}"
+                    },
+                    {
+                        "name": "Node.js: Launch Program",
+                        "type": "node",
+                        "request": "launch",
+                        "program": "${workspaceFolder}/app.js"
+                    }
+                ]
+            }
+        }
+    },
+    "forwardPorts": [3000, 8000, 8080],
+    "remoteEnv": {
+        "PYTHONPATH": "/usr/local/lib/python${PYTHON_VERSION}/site-packages"
+    },
+    "mounts": [
+        "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+    ]
+}
