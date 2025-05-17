@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web開発入門 - 統合サンプル</title>
+    <style>
+        /* CSSをHTMLファイル内に直接記述（内部CSS） */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        nav {
+            margin-bottom: 20px;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 10px;
+        }
+        
+        nav ul li a {
+            color: #3498db;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        
+        h2 {
+            color: #27ae60;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #27ae60;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .item {
+            padding: 10px;
+            border-left: 3px solid #3498db;
+            margin-bottom: 10px;
+            transition: transform 0.3s;
+        }
+        
+        .item:hover {
+            transform: translateX(10px);
+            background-color: #eaf2f8;
+        }
+        
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #777;
+            font-size: 14px;
+        }
+        
+        /* メディアクエリ（レスポンシブデザイン） */
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+        }
+        
+        /* アニメーション */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        /* DOMで追加される要素用のスタイル */
+        .dynamic-content {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #e8f8f5;
+            border-left: 3px solid #1abc9c;
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        .todo-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .todo-item input[type="checkbox"] {
+            margin-right: 10px;
+            width: auto;
+        }
+        
+        .completed {
+            text-decoration: line-through;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container fade-in">
+        <header>
+            <h1 id="title">Web開発入門 - 統合サンプル</h1>
+            <p>HTML、CSS、JavaScriptの基本要素を組み合わせたサンプルページです。</p>
+            
+            <nav>
+                <ul>
+                    <li><a href="#html-section">HTML</a></li>
+                    <li><a href="#css-section">CSS</a></li>
+                    <li><a href="#js-section">JavaScript</a></li>
+                    <li><a href="#todo-section">ToDoリスト</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <section id="html-section">
+            <h2>HTMLの基本</h2>
+            <p>HTMLはWebページの<strong>構造</strong>を定義するマークアップ言語です。</p>
+            
+            <div class="item">ヘッダー、フッター、ナビゲーション、セクションなどの構造的要素</div>
+            <div class="item">段落、リスト、表などのコンテンツ要素</div>
+            <div class="item">フォーム、入力フィールド、ボタンなどのインタラクティブ要素</div>
+        </section>
+        
+        <section id="css-section">
+            <h2>CSSの基本</h2>
+            <p>CSSはWebページの<strong>デザインやレイアウト</strong>を定義するスタイルシート言語です。</p>
+            
+            <div class="item">セレクタ、プロパティ、値の基本構造</div>
+            <div class="item">ボックスモデル、フレックスボックス、グリッドレイアウト</div>
+            <div class="item">レスポンシブデザイン、アニメーション、トランジション</div>
+        </section>
+        
+        <section id="js-section">
+            <h2>JavaScriptの基本</h2>
+            <p>JavaScriptはWebページに<strong>インタラクティブな機能</strong>を追加するプログラミング言語です。</p>
+            
+            <div class="item">変数、データ型、制御構造</div>
+            <div class="item">関数、イベント、DOM操作</div>
+            <div class="item">非同期処理、API連携</div>
+            
+            <div style="margin-top: 20px;">
+                <button id="colorButton">色を変更</button>
+                <button id="addItemButton">項目を追加</button>
+                <p id="timeDisplay">現在時刻: --:--:--</p>
+            </div>
+        </section>
+        
+        <section id="todo-section">
+            <h2>ToDoリスト</h2>
+            <p>JavaScriptを使用した簡単なToDoリストアプリケーションです。</p>
+            
+            <div>
+                <input type="text" id="todoInput" placeholder="新しいタスクを入力...">
+                <button id="addTodoButton">追加</button>
+            </div>
+            
+            <div id="todoList">
+                <!-- ToDoアイテムがここに追加されます -->
+            </div>
+        </section>
+        
+        <footer>
+            <p>&copy; 2025 Web開発入門</p>
+            <p>HTMLとCSSとJavaScriptで構築</p>
+        </footer>
+    </div>
+
+    <script>
+        // DOMが読み込まれたら実行
+        document.addEventListener('DOMContentLoaded', function() {
+            // 要素の取得
+            const colorButton = document.getElementById('colorButton');
+            const addItemButton = document.getElementById('addItemButton');
+            const timeDisplay = document.getElementById('timeDisplay');
+            const todoInput = document.getElementById('todoInput');
+            const addTodoButton = document.getElementById('addTodoButton');
+            const todoList = document.getElementById('todoList');
+            const items = document.querySelectorAll('.item');
+            
+            // 現在時刻の表示（1秒ごとに更新）
+            function updateTime() {
+                const now = new Date();
+                const hours = String(now.getHours()).padStart(2, '0');
+                const minutes = String(now.getMinutes()).padStart(2, '0');
+                const seconds = String(now.getSeconds()).padStart(2, '0');
+                timeDisplay.textContent = `現在時刻: ${hours}:${minutes}:${seconds}`;
+            }
+            
+            updateTime(); // 初期表示
+            setInterval(updateTime, 1000); // 1秒ごとに更新
+            
+            // 色変更ボタンのイベントリスナー
+            colorButton.addEventListener('click', function() {
+                // ランダムな色を生成
+                const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+                
+                // 全ての.item要素の色を変更
+                items.forEach(item => {
+                    item.style.borderLeftColor = randomColor;
+                });
+                
+                // 動的なコンテンツを追加
+                const jsSection = document.getElementById('js-section');
+                const newContent = document.createElement('p');
+                newContent.textContent = `新しい色: ${randomColor}`;
+                newContent.classList.add('dynamic-content');
+                jsSection.appendChild(newContent);
+            });
+            
+            // 項目追加ボタンのイベントリスナー
+            addItemButton.addEventListener('click', function() {
+                const newItem = document.createElement('div');
+                newItem.classList.add('item');
+                newItem.textContent = `JavaScriptで追加された項目 (${new Date().toLocaleTimeString()})`;
+                document.getElementById('js-section').appendChild(newItem);
+            });
+            
+            // ToDoリスト機能
+            addTodoButton.addEventListener('click', addTodoItem);
+            
+            // Enterキーでもタスク追加できるようにする
+            todoInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    addTodoItem();
+                }
+            });
+            
+            // ToDoアイテムを追加する関数
+            function addTodoItem() {
+                const todoText = todoInput.value.trim();
+                
+                if (todoText !== '') {
+                    // 新しいToDoアイテムを作成
+                    const todoItem = document.createElement('div');
+                    todoItem.classList.add('todo-item');
+                    
+                    // チェックボックスを作成
+                    const checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    checkbox.addEventListener('change', function() {
+                        todoItemText.classList.toggle('completed');
+                    });
+                    
+                    // テキスト要素を作成
+                    const todoItemText = document.createElement('span');
+                    todoItemText.textContent = todoText;
+                    
+                    // 削除ボタンを作成
+                    const deleteButton = document.createElement('button');
+                    deleteButton.textContent = '削除';
+                    deleteButton.style.marginLeft = 'auto';
+                    deleteButton.addEventListener('click', function() {
+                        todoList.removeChild(todoItem);
+                    });
+                    
+                    // 要素を追加
+                    todoItem.appendChild(checkbox);
+                    todoItem.appendChild(todoItemText);
+                    todoItem.appendChild(deleteButton);
+                    todoList.appendChild(todoItem);
+                    
+                    // 入力フィールドをクリア
+                    todoInput.value = '';
+                }
+            }
+            
+            // 簡単な非同期処理の例
+            setTimeout(function() {
+                // 3秒後にwelcomeメッセージを表示
+                const welcomeMessage = document.createElement('div');
+                welcomeMessage.textContent = 'ようこそ！Web開発の世界へ！';
+                welcomeMessage.style.padding = '10px';
+                welcomeMessage.style.marginTop = '20px';
+                welcomeMessage.style.backgroundColor = '#d5f5e3';
+                welcomeMessage.style.borderRadius = '5px';
+                welcomeMessage.style.textAlign = 'center';
+                welcomeMessage.style.fontWeight = 'bold';
+                document.querySelector('header').appendChild(welcomeMessage);
+                
+                // フェードインアニメーション
+                welcomeMessage.style.opacity = '0';
+                welcomeMessage.style.transition = 'opacity 1s';
+                
+                setTimeout(() => {
+                    welcomeMessage.style.opacity = '1';
+                }, 100);
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
