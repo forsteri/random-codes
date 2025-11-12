@@ -1,0 +1,15 @@
+/Users/forsteri/work/Projects/random-codes/c-sharp/HelloWorldApp/bin/Debug/net9.0/HelloWorldApp
+/Users/forsteri/work/Projects/random-codes/c-sharp/HelloWorldApp/bin/Debug/net9.0/HelloWorldApp.deps.json
+/Users/forsteri/work/Projects/random-codes/c-sharp/HelloWorldApp/bin/Debug/net9.0/HelloWorldApp.runtimeconfig.json
+/Users/forsteri/work/Projects/random-codes/c-sharp/HelloWorldApp/bin/Debug/net9.0/HelloWorldApp.dll
+/Users/forsteri/work/Projects/random-codes/c-sharp/HelloWorldApp/bin/Debug/net9.0/HelloWorldApp.pdb
+/Users/forsteri/work/Projects/random-codes/c-sharp/HelloWorldApp/obj/Debug/net9.0/HelloWorldApp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/forsteri/work/Projects/random-codes/c-sharp/HelloWorldApp/obj/Debug/net9.0/HelloWorldApp.AssemblyInfoInputs.cache
+/Users/forsteri/work/Projects/random-codes/c-sharp/HelloWorldApp/obj/Debug/net9.0/HelloWorldApp.AssemblyInfo.cs
+/Users/forsteri/work/Projects/random-codes/c-sharp/HelloWorldApp/obj/Debug/net9.0/HelloWorldApp.csproj.CoreCompileInputs.cache
+/Users/forsteri/work/Projects/random-codes/c-sharp/HelloWorldApp/obj/Debug/net9.0/HelloWorldApp.sourcelink.json
+/Users/forsteri/work/Projects/random-codes/c-sharp/HelloWorldApp/obj/Debug/net9.0/HelloWorldApp.dll
+/Users/forsteri/work/Projects/random-codes/c-sharp/HelloWorldApp/obj/Debug/net9.0/refint/HelloWorldApp.dll
+/Users/forsteri/work/Projects/random-codes/c-sharp/HelloWorldApp/obj/Debug/net9.0/HelloWorldApp.pdb
+/Users/forsteri/work/Projects/random-codes/c-sharp/HelloWorldApp/obj/Debug/net9.0/HelloWorldApp.genruntimeconfig.cache
+/Users/forsteri/work/Projects/random-codes/c-sharp/HelloWorldApp/obj/Debug/net9.0/ref/HelloWorldApp.dll
